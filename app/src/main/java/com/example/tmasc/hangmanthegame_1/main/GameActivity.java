@@ -67,7 +67,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     public void updateDisplay() {
         //Update theWord.
         showWord.setText(logic.getVisibleWord());
+
+        //Update lives left.
         livesLeft.setText(Integer.toString(logic.getLife()));
+
+        //Update guesses counter.
         guessesPoint.setText(Integer.toString(logic.getTotalGuesses()));
 
         //Update image according to lives left.

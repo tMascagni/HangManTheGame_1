@@ -21,18 +21,66 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hangmanthegame_1" />
 
+    <ImageView
+        android:id="@+id/gallow"
+        android:layout_width="215dp"
+        android:layout_height="268dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hangManTheGame"
+        app:srcCompat="@drawable/galge_1" />
+
     <TextView
         android:id="@+id/wonTheGame"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="79dp"
-        android:text="Congratulations! You've won the game! Go back to try again."
+        android:layout_marginTop="16dp"
+        android:text="Congratulations! You've won the game!"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hangManTheGame" />
+        app:layout_constraintTop_toBottomOf="@+id/gallow" />
+
+    <TextView
+        android:id="@+id/amountOfGuesses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Amount of guesses:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wonTheGame" />
+
+    <TextView
+        android:id="@+id/guesses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Guesses"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amountOfGuesses" />
+
+    <TextView
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Go back to try again."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guesses" />
+
 </android.support.constraint.ConstraintLayout>

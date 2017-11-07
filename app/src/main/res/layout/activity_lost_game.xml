@@ -7,7 +7,7 @@
     tools:context="com.example.tmasc.hangmanthegame_1.main.LostGameActivity">
 
     <ImageView
-        android:id="@+id/hangManTHeGame"
+        android:id="@+id/hangManTheGame"
         android:layout_width="386dp"
         android:layout_height="123dp"
         android:layout_marginEnd="8dp"
@@ -21,23 +21,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hangmanthegame_1" />
 
-    <TextView
-        android:id="@+id/lostTheGame"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:text="You sadly lost the game! Go back to try again."
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/hangMan"
         android:layout_width="215dp"
         android:layout_height="268dp"
         app:srcCompat="@drawable/forkert7_1"
@@ -46,5 +31,56 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hangManTHeGame" />
+        app:layout_constraintTop_toBottomOf="@+id/hangManTheGame" />
+
+    <TextView
+        android:id="@+id/lostTheGame"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="You sadly lost the game!"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hangMan" />
+
+    <TextView
+        android:id="@+id/theWordWas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="The word was:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lostTheGame" />
+
+    <TextView
+        android:id="@+id/theWord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Word"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/theWordWas" />
+
+    <TextView
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Go back to try again."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/theWord" />
 </android.support.constraint.ConstraintLayout>

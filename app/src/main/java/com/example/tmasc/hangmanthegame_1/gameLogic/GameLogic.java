@@ -79,6 +79,7 @@ public class GameLogic {
             possibleWords.add("gangsti");
             possibleWords.add("skovsnegl");
             possibleWords.add("solsort");
+            possibleWords.add("runescape");
             reset();
         }
 
