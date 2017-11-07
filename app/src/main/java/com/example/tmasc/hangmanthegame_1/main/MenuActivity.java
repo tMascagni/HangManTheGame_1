@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.tmasc.hangmanthegame_1.R;
+import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -22,6 +23,9 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        //Henter ord fra nettet.
+        new wordFromURL().execute();
 
         //Instantiate.
         Start_btn = (Button) findViewById(R.id.Start_btn);

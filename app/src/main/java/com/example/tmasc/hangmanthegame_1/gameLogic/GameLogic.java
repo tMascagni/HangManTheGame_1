@@ -1,9 +1,15 @@
 package com.example.tmasc.hangmanthegame_1.gameLogic;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import com.example.tmasc.hangmanthegame_1.AsyncTask;
+import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 
 public class GameLogic {
 
@@ -16,7 +22,7 @@ public class GameLogic {
         private boolean lastLetterWasCorrect;
         private boolean theGameIsWon;
         private boolean theGameIsLost;
-        private static GameLogic instance = new GameLogic();
+        private static GameLogic instance;
         private int life = 0;
         private int letterScore = 1;
         private final Random random = new Random();
@@ -28,11 +34,9 @@ public class GameLogic {
 
             return UsedLetters;
         }
-
         public void setPossibleWords(List<String> list) {
             this.possibleWords = possibleWords;
         }
-
         public String getVisibleWord() {
 
             return visibleWord;
@@ -62,27 +66,41 @@ public class GameLogic {
             return theGameIsLost || theGameIsWon;
         }
 
-        public static GameLogic getInstance() {
-            return instance;
-        }
-
-
         public int getTotalGuesses() {
             return totalGuesses;
         }
 
-
-    public int getLife() {
+        public int getLife() {
             return life;
         }
 
-        public GameLogic(){
-
-            //possibleWords.add("runescape");
-            //possibleWords.add("komnu");
-            getRandomPossibleWord();
-            reset();
+        private GameLogic() {
         }
+
+        static {
+            try {
+                instance = new GameLogic();
+            }
+            catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        public static synchronized GameLogic getInstance() {
+            return instance;
+        }
+
+    public static String fetchURL(String url) throws IOException {
+        System.out.println("Fetching data from " + url);
+        BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
+        StringBuilder sb = new StringBuilder();
+        String linje = br.readLine();
+        while (linje != null) {
+            sb.append(linje + "\n");
+            linje = br.readLine();
+        }
+        return sb.toString();
+    }
 
         private String getRandomPossibleWord() {
             return possibleWords.get(random.nextInt(possibleWords.size()));
@@ -95,6 +113,13 @@ public class GameLogic {
             totalGuesses = 0;
             theGameIsWon = false;
             theGameIsLost = false;
+            //theWord = possibleWords.get(new Random().nextInt(possibleWords.size()));
+            //updateWord();
+            //theWord = getRandomPossibleWord();
+            //updateVisibleWord();
+        }
+
+        public void updateWord(){
             theWord = possibleWords.get(new Random().nextInt(possibleWords.size()));
             updateVisibleWord();
         }
@@ -148,45 +173,6 @@ public class GameLogic {
             if (theGameIsWon) System.out.println("- THE GAME IS WON");
             System.out.println("---------- ");
         }
-    /*
-    public static String fetchURL(String url) throws IOException {
-        System.out.println("Fetching data from " + url);
-        BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
-        StringBuilder sb = new StringBuilder();
-        String linje = br.readLine();
-        while (linje != null) {
-            sb.append(linje + "\n");
-            linje = br.readLine();
-        }
-        return sb.toString();
-    }
-
-
-    public void getWordFromURL() throws Exception {
-        String data = fetchURL("https://en.wikipedia.org/wiki/RuneScape");
-        //System.out.println("data = " + data);
-
-        data = data.substring(data.indexOf("<body")). // fjern headere
-                replaceAll("<.+?>", " ").toLowerCase(). // fjern tags
-                replaceAll("&#198;", "æ"). // erstat HTML-tegn
-                replaceAll("&#230;", "æ"). // erstat HTML-tegn
-                replaceAll("&#216;", "ø"). // erstat HTML-tegn
-                replaceAll("&#248;", "ø"). // erstat HTML-tegn
-                replaceAll("&oslash;", "ø"). // erstat HTML-tegn
-                replaceAll("&#229;", "å"). // erstat HTML-tegn
-                replaceAll("[^a-zæøå]", " "). // fjern tegn der ikke er bogstaver
-                replaceAll(" [a-zæøå] ", " "). // fjern 1-bogstavsord
-                replaceAll(" [a-zæøå][a-zæøå] ", " "); // fjern 2-bogstavsord
-
-        System.out.println("data = " + data);
-        System.out.println("data = " + Arrays.asList(data.split("\\s+")));
-        possibleWords.clear();
-        possibleWords.addAll(new HashSet<String>(Arrays.asList(data.split(" "))));
-
-        System.out.println("possibleWord = " + possibleWords);
-        reset();
-    }
-    */
 }
 
 

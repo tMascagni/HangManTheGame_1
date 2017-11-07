@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 
 import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
@@ -41,6 +42,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_game);
 
         logic.reset();
+        logic.updateWord();
+
 
         //Instantiate.
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
