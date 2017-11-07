@@ -26,13 +26,13 @@
         android:layout_height="268dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/galge_1"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/hangmanthegame" />
 
     <TextView
         android:id="@+id/showWord"
@@ -40,7 +40,7 @@
         android:layout_height="34dp"
         android:text="The word"
         android:textAlignment="center"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:layout_marginTop="7dp"
         app:layout_constraintTop_toBottomOf="@+id/gallow"
@@ -60,16 +60,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="9dp"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="8dp"
         android:text="Lives"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/black"
         android:textSize="20sp"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintLeft_toRightOf="@+id/gallow"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="9dp" />
+        android:layout_marginEnd="9dp"
+        app:layout_constraintTop_toBottomOf="@+id/hangmanthegame" />
 
     <TextView
         android:id="@+id/livesLeft"
@@ -95,16 +95,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="9dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="95dp"
-        android:textColor="@android:color/background_light"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black"
         android:text="Guesses"
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/gallow"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         android:layout_marginStart="9dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/hangmanthegame" />
 
     <TextView
         android:id="@+id/guessesPoint"
@@ -427,8 +426,9 @@
                 android:background="@drawable/btn_color_shp"
                 android:text=""
                 android:textSize="14sp"
-                android:visibility="invisible"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
+
             <Button
                 android:id="@+id/v_btn"
                 android:layout_width="35dp"

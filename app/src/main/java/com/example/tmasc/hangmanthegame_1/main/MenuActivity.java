@@ -1,6 +1,7 @@
 package com.example.tmasc.hangmanthegame_1.main;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -42,16 +43,28 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.Start_btn:
+                if (view instanceof Button) {
+                    ((Button) view).setBackgroundColor(Color.DKGRAY);
+                    ((Button) view).setTextColor(Color.BLACK);
+                }
                 Intent initGame = new Intent(this, GameActivity.class);
                 startActivity(initGame);
                 System.out.println("Trying to start GameActivity_1.");
                 break;
             case R.id.High_btn:
+                if (view instanceof Button) {
+                    ((Button) view).setBackgroundColor(Color.DKGRAY);
+                    ((Button) view).setTextColor(Color.BLACK);
+                }
                 Intent initHighscore = new Intent(this, HighscoreActivity.class);
                 startActivity(initHighscore);
                 System.out.println("Trying to start HighscoreActivity.");
                 break;
             case R.id.Help_btn:
+                if (view instanceof Button) {
+                    ((Button) view).setBackgroundColor(Color.DKGRAY);
+                    ((Button) view).setTextColor(Color.BLACK);
+                }
                 Intent initHelp = new Intent(this, HelpActivity.class);
                 startActivity(initHelp);
                 System.out.println("Trying to start HelpActivity.");

@@ -72,27 +72,29 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
         //Update image according to lives left.
         switch (logic.getLife()) {
-            case 6:
+            case 7:
                 gallow.setImageResource(R.drawable.galge_1);
                 break;
-            case 5:
+            case 6:
                 gallow.setImageResource(R.drawable.forkert1_1);
                 break;
-            case 4:
+            case 5:
                 gallow.setImageResource(R.drawable.forkert2_1);
                 break;
-            case 3:
+            case 4:
                 gallow.setImageResource(R.drawable.forkert3_1);
                 break;
-            case 2:
+            case 3:
                 gallow.setImageResource(R.drawable.forkert4_1);
                 break;
-            case 1:
+            case 2:
                 gallow.setImageResource(R.drawable.forkert5_1);
                 break;
-            case 0:
+            case 1:
                 gallow.setImageResource(R.drawable.forkert6_1);
                 break;
+            case 0:
+                gallow.setImageResource(R.drawable.forkert7_1);
             default:
                 break;
         }
@@ -127,7 +129,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if (view instanceof Button) {
             String guess = ((Button) view).getText().toString();
             guess (guess);
-            ((Button) view).setTextColor(Color.DKGRAY);
+            ((Button) view).setTextColor(Color.BLACK);
+            ((Button) view).setBackgroundColor(Color.DKGRAY);
             view.setEnabled(false);
         }
 
