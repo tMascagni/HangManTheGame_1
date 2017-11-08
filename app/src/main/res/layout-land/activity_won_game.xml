@@ -74,14 +74,43 @@
 
     <TextView
         android:id="@+id/continueTxt"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Go back to try again."
+        android:text="Press continue to keep going or store your data via the store button."
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gallow"
         app:layout_constraintTop_toBottomOf="@+id/points" />
+
+    <Button
+        android:id="@+id/continueGameBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_color_shp"
+        android:text="continue"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/continueTxt" />
+
+    <Button
+        android:id="@+id/storeScoreBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_color_shp"
+        android:text="Store score"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gallow"
+        app:layout_constraintTop_toBottomOf="@+id/continueTxt" />
 
 </android.support.constraint.ConstraintLayout>

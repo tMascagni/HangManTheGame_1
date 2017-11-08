@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="324dp"
         android:layout_marginTop="90dp"
-        android:text="Guesses"
+        android:text="Points"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
