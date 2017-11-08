@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
-import com.example.tmasc.hangmanthegame_1.main.HighscoreCreateScoreActivity;
 
 public class LostGameActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -41,7 +40,7 @@ public class LostGameActivity extends AppCompatActivity implements View.OnClickL
         theWord = (TextView) findViewById(R.id.theWord);
         yourScore = (TextView) findViewById(R.id.yourScore);
         points = (TextView) findViewById(R.id.points);
-        goBack = (TextView) findViewById(R.id.goBack);
+        goBack = (TextView) findViewById(R.id.continueTxt);
         storeScore = (Button) findViewById(R.id.storeScore);
 
         // I/O listeners.

@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/wonTheGame" />
 
     <TextView
-        android:id="@+id/guesses"
+        android:id="@+id/points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/amountOfGuesses" />
 
     <TextView
-        android:id="@+id/goBack"
+        android:id="@+id/continueTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -82,6 +82,6 @@
         android:text="Go back to try again."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gallow"
-        app:layout_constraintTop_toBottomOf="@+id/guesses" />
+        app:layout_constraintTop_toBottomOf="@+id/points" />
 
 </android.support.constraint.ConstraintLayout>

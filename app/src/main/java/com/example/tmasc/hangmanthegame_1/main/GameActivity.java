@@ -9,8 +9,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 
 import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
@@ -19,7 +17,7 @@ import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView hangManTheGame, gallow;
-    private TextView showWord, lives, livesLeft, guesses, guessesPoint;
+    private TextView showWord, lives, livesLeft, points, pointsPoints;
 
     private final int btnAmount = 26;
 
@@ -41,9 +39,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        // Resets the logic layer.
-        logic.reset();
-
         // Updates the word you have to guess.
         logic.updateWord();
 
@@ -53,8 +48,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         showWord = (TextView) findViewById(R.id.showWord);
         lives = (TextView) findViewById(R.id.lives);
         livesLeft = (TextView) findViewById(R.id.livesLeft);
-        guesses = (TextView) findViewById(R.id.guesses);
-        guessesPoint = (TextView) findViewById(R.id.guessesPoint);
+        points = (TextView) findViewById(R.id.points);
+        pointsPoints = (TextView) findViewById(R.id.pointsPoint);
 
         // for-loop to create all the buttons.
         for (int i = 0; i < btnArray.length; i++) {
@@ -77,7 +72,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         livesLeft.setText(Integer.toString(logic.getLife()));
 
         //Update guesses counter.
-        guessesPoint.setText(Integer.toString(logic.getTotalGuesses()));
+        pointsPoints.setText(Integer.toString(logic.getScore()));
 
         //Update image according to lives left.
         switch (logic.getLife()) {

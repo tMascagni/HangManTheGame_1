@@ -20,7 +20,7 @@ public class wordFromURL extends AsyncTask<String, String, List<String>>{
         System.out.println("Starting AsyncTask");
 
         try {
-            String data = gameLogic.fetchURL("https://da.wikipedia.org/wiki/RuneScape");
+            String data = gameLogic.fetchURL("https://en.wikipedia.org/wiki/Wikipedia:Random");
 
             // Removes all the special characters.
             data = data.replaceAll("<.+?>", " ").toLowerCase().replaceAll("[^a-z]", " ");
@@ -30,7 +30,17 @@ public class wordFromURL extends AsyncTask<String, String, List<String>>{
 
             // Remove words consisting of 2 letters.
             data.replaceAll(" [a-z][a-z] "," ");
+
+            // Removes æ, ø and å.
+            data.replaceAll("&#198;", "æ"); // erstat HTML-tegn
+            data.replaceAll("&#230;", "æ"); // erstat HTML-tegn
+            data.replaceAll("&#216;", "ø"); // erstat HTML-tegn
+            data.replaceAll("&#248;", "ø"); // erstat HTML-tegn
+            data.replaceAll("&oslash;", "ø"); // erstat HTML-tegn
+            data.replaceAll("&#229;", "å"); // erstat HTML-tegn
+
             words.addAll(new HashSet<>(Arrays.asList(data.split(" "))));
+
         }
         catch (Exception e) {
             e.printStackTrace();

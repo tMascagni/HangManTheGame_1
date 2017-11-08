@@ -427,6 +427,7 @@
                 android:text="Z"
                 android:textSize="14sp"
                 android:textStyle="bold" />
+
             <Button
                 android:id="@+id/okBtn"
                 android:layout_width="35dp"
@@ -435,7 +436,8 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
-                android:text="Ok"
+                android:elevation="0dp"
+                android:text="OK"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 

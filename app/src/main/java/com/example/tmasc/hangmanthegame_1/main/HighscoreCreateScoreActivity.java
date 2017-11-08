@@ -1,15 +1,18 @@
 package com.example.tmasc.hangmanthegame_1.main;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tmasc.hangmanthegame_1.R;
+import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
 
 public class HighscoreCreateScoreActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -17,7 +20,9 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
     private TextView typeName;
     private EditText name;
 
-    private final int btnAmount = 26;
+    private final GameLogic logic = GameLogic.getInstance();
+
+    private final int btnAmount = 27;
 
     private final Button[] btnArray = new Button[btnAmount];
     private final Integer[] btnIdArray = {
@@ -51,12 +56,32 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
     @Override
     public void onClick(View view) {
         if (view instanceof Button) {
-            String guess = ((Button) view).getText().toString();
-            name.append(guess);
-            ((Button) view).setTextColor(Color.BLACK);
-            ((Button) view).setBackgroundColor(Color.DKGRAY);
-            view.setEnabled(false);
+            if (view.getId() != R.id.okBtn || view.getId() != R.id.backSpace){
+                String guess = ((Button) view).getText().toString();
+                ((Button) view).setTextColor(Color.BLACK);
+                ((Button) view).setBackgroundColor(Color.DKGRAY);
+                name.append(guess);
+                view.setEnabled(false);
+            }
+
+            else if (view.getId() == R.id.backSpace) {
+                String str = name.getText().toString();
+                name.getText().toString().substring(0, str.length() - 1);
+                name.setText(str);
+            }
+
+            else if (view.getId() == R.id.okBtn) {
+                logic.setName(name.getText().toString());
+            }
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent initGame = new Intent(this, MenuActivity.class);
+        startActivity(initGame);
+        System.out.println("Trying to start MenuActivity.");
     }
 }

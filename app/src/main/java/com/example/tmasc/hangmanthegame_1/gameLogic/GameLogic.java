@@ -1,5 +1,7 @@
 package com.example.tmasc.hangmanthegame_1.gameLogic;
 
+import android.text.Editable;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -27,6 +29,7 @@ public class GameLogic {
         private int letterScore = 10;
         private final Random random = new Random();
         private int score = 0;
+        private String name = "Name";
 
         public ArrayList<String> getUsedLetters() {
 
@@ -72,8 +75,12 @@ public class GameLogic {
         }
         public int getScore() {
             return score; }
+        public String getName() {return name; }
+        public void setName(String navn) {this.name = navn; }
+
         private GameLogic() {
         }
+
 
         static {
             try {
@@ -112,13 +119,10 @@ public class GameLogic {
             totalGuesses = 0;
             theGameIsWon = false;
             theGameIsLost = false;
-            //theWord = possibleWords.get(new Random().nextInt(possibleWords.size()));
-            //updateWord();
-            //theWord = getRandomPossibleWord();
-            //updateVisibleWord();
         }
 
         public void updateWord(){
+            getUsedLetters().clear();
             theWord = possibleWords.get(new Random().nextInt(possibleWords.size()));
             updateVisibleWord();
         }

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
+import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -18,6 +19,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView welcomeView, hangManTheGame;
 
     private static boolean isPlaying = false;
+    private final GameLogic logic = GameLogic.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 Intent initGame = new Intent(this, GameActivity.class);
                 startActivity(initGame);
                 System.out.println("Trying to start GameActivity_1.");
+                // Resets the logic layer.
+                logic.reset();
                 break;
             case R.id.High_btn:
                 if (view instanceof Button) {
