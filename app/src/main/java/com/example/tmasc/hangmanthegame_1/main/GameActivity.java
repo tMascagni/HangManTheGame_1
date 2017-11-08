@@ -41,11 +41,13 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        // Resets the logic layer.
         logic.reset();
+
+        // Updates the word you have to guess.
         logic.updateWord();
 
-
-        //Instantiate.
+        // Instantiate.
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
         gallow = (ImageView) findViewById(R.id.gallow);
         showWord = (TextView) findViewById(R.id.showWord);
@@ -60,10 +62,10 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             btnArray[i].setOnClickListener(this);
         }
 
-        //Update the display with the logic layer values.
+        // Update the display with the logic layer values.
         updateDisplay();
 
-        //Disable keyboard.
+        // Disable keyboard.
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
@@ -108,20 +110,20 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void guess(String guess) {
-        /* Make the logic controller take a guess! */
+        // Make the logic controller take a guess!
         logic.guessLetter(guess.toLowerCase());
 
-        /* Update the display, to see the next status after the guess */
+        // Update the display, to see the next status after the guess-
         updateDisplay();
 
-        /* Check whether the game is lost or not */
+        // Check whether the game is lost or not.
         if (logic.isTheGameLost()) {
             Intent initLostGameActivity = new Intent(this, LostGameActivity.class);
             startActivity(initLostGameActivity);
             System.out.println("Trying to start LostGameActivity.");
         }
 
-        /* Check whether the game is won or not */
+        // Check whether the game is won or not.
         if (logic.isTheGameWon()) {
             Intent initWonGameActivity = new Intent(this, WonGameActivity.class);
             startActivity(initWonGameActivity);

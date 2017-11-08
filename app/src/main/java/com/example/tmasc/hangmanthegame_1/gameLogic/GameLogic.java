@@ -13,7 +13,7 @@ import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 
 public class GameLogic {
 
-        private ArrayList<String> possibleWords = new ArrayList<String>();
+        private List<String> possibleWords = new ArrayList<String>();
         private String theWord;
         private ArrayList<String> UsedLetters = new ArrayList<String>();
         private String visibleWord;
@@ -24,10 +24,8 @@ public class GameLogic {
         private boolean theGameIsLost;
         private static GameLogic instance;
         private int life = 0;
-        private int letterScore = 1;
+        private int letterScore = 10;
         private final Random random = new Random();
-        private int roundScore = 0;
-        private int round = 0;
         private int score = 0;
 
         public ArrayList<String> getUsedLetters() {
@@ -35,7 +33,7 @@ public class GameLogic {
             return UsedLetters;
         }
         public void setPossibleWords(List<String> list) {
-            this.possibleWords = possibleWords;
+            this.possibleWords = list;
         }
         public String getVisibleWord() {
 
@@ -69,11 +67,11 @@ public class GameLogic {
         public int getTotalGuesses() {
             return totalGuesses;
         }
-
         public int getLife() {
             return life;
         }
-
+        public int getScore() {
+            return score; }
         private GameLogic() {
         }
 
@@ -90,7 +88,7 @@ public class GameLogic {
             return instance;
         }
 
-    public static String fetchURL(String url) throws IOException {
+        public static String fetchURL(String url) throws IOException {
         System.out.println("Fetching data from " + url);
         BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
         StringBuilder sb = new StringBuilder();
@@ -110,6 +108,7 @@ public class GameLogic {
             getUsedLetters().clear();
             wrongLetterAmount = 0;
             life = 7;
+            score = 0;
             totalGuesses = 0;
             theGameIsWon = false;
             theGameIsLost = false;
@@ -148,6 +147,7 @@ public class GameLogic {
             getUsedLetters().add(letter);
 
             if (theWord.contains(letter)) {
+                score += letterScore;
                 lastLetterWasCorrect = true;
                 System.out.println("Bogstavet var korrekt: " + letter);
             } else {

@@ -20,8 +20,16 @@ public class wordFromURL extends AsyncTask<String, String, List<String>>{
         System.out.println("Starting AsyncTask");
 
         try {
-            String data = gameLogic.fetchURL("https://en.wikipedia.org/wiki/Wikipedia:Random");
+            String data = gameLogic.fetchURL("https://da.wikipedia.org/wiki/RuneScape");
+
+            // Removes all the special characters.
             data = data.replaceAll("<.+?>", " ").toLowerCase().replaceAll("[^a-z]", " ");
+
+            // Remove words consisting of 1 letter.
+            data.replaceAll(" [a-z] "," ");
+
+            // Remove words consisting of 2 letters.
+            data.replaceAll(" [a-z][a-z] "," ");
             words.addAll(new HashSet<>(Arrays.asList(data.split(" "))));
         }
         catch (Exception e) {

@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tmasc.hangmanthegame_1">
 
-    <!--- tilladelser -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- - tilladelser -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,16 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.HelpActivity">
-        </activity>
-        <activity android:name=".main.HighscoreActivity" >
-        </activity>
-        <activity android:name=".main.GameActivity">
-        </activity>
-        <activity android:name=".main.LostGameActivity">
-        </activity>
-        <activity android:name=".main.WonGameActivity">
-        </activity>
+        <activity android:name=".main.HelpActivity"></activity>
+        <activity android:name=".main.HighscoreActivity"></activity>
+        <activity android:name=".main.GameActivity"></activity>
+        <activity android:name=".main.LostGameActivity"></activity>
+        <activity android:name=".main.WonGameActivity"></activity>
+        <activity android:name=".highscore_create_score"></activity>
     </application>
 
 </manifest>
