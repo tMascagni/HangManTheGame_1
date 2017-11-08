@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tmasc.hangmanthegame_1.highscore_create_score">
+    tools:context="com.example.tmasc.hangmanthegame_1.main.HighscoreCreateScoreActivity">
 
     <EditText
         android:id="@+id/name"
-        android:layout_width="175"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:ems="10"
+        android:hint="Your name here..."
         android:inputType="textPersonName"
-        android:text="Your name here..."
         android:textAlignment="center"
         android:textColor="#323232"
         android:textStyle="italic"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="Type in your name and press store"
+        android:text="Type in your name and press OK"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -351,8 +351,8 @@
             android:orientation="vertical"
             android:weightSum="7">
 
-            <Button
-                android:id="@+id/invis_1"
+            <ImageButton
+                android:id="@+id/backSpace"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="5dp"
@@ -362,7 +362,11 @@
                 android:text=""
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:visibility="invisible" />
+                app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+                app:layout_constraintEnd_toStartOf="@+id/name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typeName"
+                app:srcCompat="@android:drawable/ic_input_delete"/>
 
             <Button
                 android:id="@+id/v_btn"
@@ -424,16 +428,15 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
             <Button
-                android:id="@+id/invis_2"
+                android:id="@+id/okBtn"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
-                android:text=""
+                android:text="Ok"
                 android:textSize="14sp"
-                android:visibility="invisible"
                 android:textStyle="bold" />
 
 
@@ -441,35 +444,4 @@
 
     </TableLayout>
 
-    <Button
-        android:id="@+id/okBtn"
-        android:layout_width="50dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btn_color_shp"
-        android:text="Ok"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/name"
-        app:layout_constraintTop_toBottomOf="@+id/typeName" />
-
-    <Button
-        android:id="@+id/backBtn"
-        android:layout_width="50dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/btn_color_shp"
-        android:text="back"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toStartOf="@+id/name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/typeName" />
 </android.support.constraint.ConstraintLayout>

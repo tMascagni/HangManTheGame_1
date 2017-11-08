@@ -24,7 +24,7 @@
         <activity android:name=".main.GameActivity"></activity>
         <activity android:name=".main.LostGameActivity"></activity>
         <activity android:name=".main.WonGameActivity"></activity>
-        <activity android:name=".highscore_create_score"></activity>
+        <activity android:name=".main.HighscoreCreateScoreActivity"></activity>
     </application>
 
 </manifest>

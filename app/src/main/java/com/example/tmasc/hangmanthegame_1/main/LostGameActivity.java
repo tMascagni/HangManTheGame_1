@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
+import com.example.tmasc.hangmanthegame_1.main.HighscoreCreateScoreActivity;
 
 public class LostGameActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -32,6 +33,7 @@ public class LostGameActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost_game);
 
+        // Initiate
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
         hangMan = (ImageView) findViewById(R.id.hangMan);
         lostTheGame = (TextView) findViewById(R.id.lostTheGame);
@@ -41,6 +43,9 @@ public class LostGameActivity extends AppCompatActivity implements View.OnClickL
         points = (TextView) findViewById(R.id.points);
         goBack = (TextView) findViewById(R.id.goBack);
         storeScore = (Button) findViewById(R.id.storeScore);
+
+        // I/O listeners.
+        storeScore.setOnClickListener(this);
 
         //Update function
         updateDisplay();
