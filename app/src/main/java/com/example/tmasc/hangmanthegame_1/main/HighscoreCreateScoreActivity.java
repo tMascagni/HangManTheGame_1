@@ -5,13 +5,18 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tmasc.hangmanthegame_1.R;
+import com.example.tmasc.hangmanthegame_1.data.DAO.HighscoreDAO;
+import com.example.tmasc.hangmanthegame_1.data.DTO.HighscoreDTO;
+import com.example.tmasc.hangmanthegame_1.data.exception.DataException;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
 
 public class HighscoreCreateScoreActivity extends AppCompatActivity implements View.OnClickListener {
@@ -21,6 +26,7 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
     private EditText name;
 
     private final GameLogic logic = GameLogic.getInstance();
+    private final HighscoreDAO daoInstans = HighscoreDAO.getInstance();
 
     private final int btnAmount = 27;
 
@@ -32,7 +38,8 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
             R.id.m_btn, R.id.n_btn, R.id.o_btn, R.id.p_btn,
             R.id.q_btn, R.id.r_btn, R.id.s_btn, R.id.t_btn,
             R.id.u_btn, R.id.v_btn, R.id.w_btn, R.id.x_btn,
-            R.id.y_btn, R.id.z_btn, R.id.okBtn, R.id.backSpace};
+            R.id.y_btn, R.id.z_btn, R.id.okBtn
+    };
 
 
     @Override
@@ -51,30 +58,34 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
             btnArray[i] = (Button) findViewById(btnIdArray[i]);
             btnArray[i].setOnClickListener(this);
         }
+
+        // Disable keyboard.
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     @Override
     public void onClick(View view) {
-        if (view instanceof Button) {
-            if (view.getId() != R.id.okBtn || view.getId() != R.id.backSpace){
+        switch (view.getId()) {
+            case R.id.okBtn:
+                Toast.makeText(getBaseContext(), "Ok pressed", Toast.LENGTH_SHORT).show();
+                logic.setName(name.getText().toString());
+                HighscoreDTO dto = new HighscoreDTO(logic.getScore(), logic.getName());
+                try {
+                    daoInstans.add(dto);
+                    daoInstans.save(getBaseContext(), dto);
+                } catch (DataException e) {
+                    e.printStackTrace();
+                }
+                break;
+
+            default:
                 String guess = ((Button) view).getText().toString();
                 ((Button) view).setTextColor(Color.BLACK);
                 ((Button) view).setBackgroundColor(Color.DKGRAY);
                 name.append(guess);
                 view.setEnabled(false);
-            }
-
-            else if (view.getId() == R.id.backSpace) {
-                String str = name.getText().toString();
-                name.getText().toString().substring(0, str.length() - 1);
-                name.setText(str);
-            }
-
-            else if (view.getId() == R.id.okBtn) {
-                logic.setName(name.getText().toString());
-            }
+                break;
         }
-
     }
 
     @Override

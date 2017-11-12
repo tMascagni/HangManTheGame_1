@@ -39,7 +39,7 @@ public class LostGameActivity extends AppCompatActivity implements View.OnClickL
         theWordWas = (TextView) findViewById(R.id.theWordWas);
         theWord = (TextView) findViewById(R.id.theWord);
         yourScore = (TextView) findViewById(R.id.yourScore);
-        points = (TextView) findViewById(R.id.points);
+        points = (TextView) findViewById(R.id.score);
         goBack = (TextView) findViewById(R.id.continueTxt);
         storeScore = (Button) findViewById(R.id.storeScore);
 

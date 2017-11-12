@@ -48,7 +48,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         showWord = (TextView) findViewById(R.id.showWord);
         lives = (TextView) findViewById(R.id.lives);
         livesLeft = (TextView) findViewById(R.id.livesLeft);
-        points = (TextView) findViewById(R.id.points);
+        points = (TextView) findViewById(R.id.score);
         pointsPoints = (TextView) findViewById(R.id.pointsPoint);
 
         // for-loop to create all the buttons.

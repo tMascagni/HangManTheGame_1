@@ -32,11 +32,11 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
         gallow = (ImageView) findViewById(R.id.gallow);
         wonTheGame = (TextView) findViewById(R.id.wonTheGame);
         amountOfGuesses = (TextView) findViewById(R.id.amountOfGuesses);
-        guesses = (TextView) findViewById(R.id.points);
+        guesses = (TextView) findViewById(R.id.score);
         continueTxt = (TextView) findViewById(R.id.continueTxt);
         lifes = (TextView) findViewById(R.id.lifes);
         lifesPoints = (TextView) findViewById(R.id.lifesPoints);
-        points = (TextView) findViewById(R.id.points);
+        points = (TextView) findViewById(R.id.score);
         pointsPoints = (TextView) findViewById(R.id.pointsPoints);
         continueGameBtn = (Button) findViewById(R.id.continueGameBtn);
         storeScoreBtn = (Button) findViewById(R.id.storeScoreBtn);
