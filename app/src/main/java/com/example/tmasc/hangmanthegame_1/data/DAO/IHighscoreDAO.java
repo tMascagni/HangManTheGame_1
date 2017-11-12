@@ -14,13 +14,9 @@ public interface IHighscoreDAO {
 
     public List<HighscoreDTO> getList() throws DataException;
 
-    public void setHighscore(HighscoreDTO dto) throws DataException;
+    public void save (Context context) throws DataException;
 
-    public void addList(List<HighscoreDTO> dtoList) throws DataException;
-
-    public void save (Context context, HighscoreDTO dto) throws DataException;
-
-    public List<HighscoreDTO> load(Context context) throws DataException;
+    public void load(Context context) throws DataException;
 
     public void add(HighscoreDTO dto) throws DataException;
 

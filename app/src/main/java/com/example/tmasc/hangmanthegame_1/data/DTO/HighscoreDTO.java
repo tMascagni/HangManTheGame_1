@@ -1,6 +1,10 @@
 package com.example.tmasc.hangmanthegame_1.data.DTO;
 
-public class HighscoreDTO {
+import android.support.annotation.NonNull;
+
+import java.io.Serializable;
+
+public class HighscoreDTO implements Comparable<HighscoreDTO>, Serializable{
 
     private static int id;
     private int score;
@@ -14,16 +18,11 @@ public class HighscoreDTO {
         return name;
     }
 
-    public int getId() {
-        return id;
-    }
 
     public HighscoreDTO(int score, String name) {
-        this.id = id++;
         this.score = score;
         this.name = name;
     }
-
 
     @Override
     public String toString() {
@@ -34,8 +33,13 @@ public class HighscoreDTO {
                 "]";
     }
 
-    public int compare(HighscoreDTO dto_1, HighscoreDTO dto_2) {
-        return Integer.compare(dto_1.getScore(), dto_2.getScore());
+    @Override
+    public int compareTo(@NonNull HighscoreDTO other) {
+        if (this.score == other.score)
+            return 0;
+        else if (this.score < other.score)
+            return 1;
+        else
+            return -1;
     }
-
 }

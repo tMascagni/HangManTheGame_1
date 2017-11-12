@@ -2,7 +2,6 @@ package com.example.tmasc.hangmanthegame_1.data.DAO;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.Preference;
 
 import com.example.tmasc.hangmanthegame_1.data.DTO.HighscoreDTO;
 import com.example.tmasc.hangmanthegame_1.data.exception.DataException;
@@ -11,15 +10,17 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class HighscoreDAO implements IHighscoreDAO{
 
-    private static HighscoreDAO DAOsingleton = new HighscoreDAO();
+    private static HighscoreDAO DAOinstance = new HighscoreDAO();
 
     private final String mem_key = "highscore";
 
-    private List<HighscoreDTO> highScoreList;
+    private List<HighscoreDTO> highScoreList = new ArrayList<>();
 
     private HighscoreDAO() {
     }
@@ -31,11 +32,11 @@ public class HighscoreDAO implements IHighscoreDAO{
 
     @Override
     public List<HighscoreDTO> getList() throws DataException {
-        return null;
+        return highScoreList;
     }
 
     @Override
-    public List<HighscoreDTO> load(Context context) throws DataException {
+    public void load(Context context) throws DataException {
         SharedPreferences preferences = context.getSharedPreferences("Preferences", Context.MODE_PRIVATE);
 
         String json = preferences.getString(mem_key, null);
@@ -44,47 +45,38 @@ public class HighscoreDAO implements IHighscoreDAO{
         Type type = new TypeToken<ArrayList<HighscoreDTO>>() {
         }.getType();
 
+        highScoreList =  (ArrayList<HighscoreDTO>) gson.fromJson(json, type);
 
-        return gson.fromJson(json, type);
+        if (highScoreList == null) {
+            highScoreList = new ArrayList<>();
+            save(context);
+        }
     }
+
 
     @Override
     public void add(HighscoreDTO dto) throws DataException {
         highScoreList.add(dto);
+        Collections.sort(highScoreList);
     }
 
     @Override
-    public void save(Context context, HighscoreDTO dto) throws DataException {
+    public void save(Context context) throws DataException {
 
         Gson gson = new Gson();
-        List<HighscoreDTO> list = load(context);
-
-        if (list == null) {
-            list = new ArrayList<HighscoreDTO>();
-        }
 
         SharedPreferences preferences = context.getSharedPreferences("Preferences", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
-        String json = gson.toJson(list);
+        String json = gson.toJson(highScoreList);
 
-        SharedPreferences.Editor editor1 = editor.putString(mem_key, json);
+        editor.putString(mem_key, json);
 
-        editor.commit();
-    }
-
-    @Override
-    public void addList(List<HighscoreDTO> dtoList) throws DataException {
-
-    }
-
-    @Override
-    public void setHighscore(HighscoreDTO dto) throws DataException {
-
+        editor.apply();
     }
 
     public static HighscoreDAO getInstance() {
-        return DAOsingleton;
+        return DAOinstance;
     }
 }
 

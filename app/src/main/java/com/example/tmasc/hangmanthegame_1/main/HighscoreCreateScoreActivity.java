@@ -67,15 +67,22 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.okBtn:
-                Toast.makeText(getBaseContext(), "Ok pressed", Toast.LENGTH_SHORT).show();
                 logic.setName(name.getText().toString());
                 HighscoreDTO dto = new HighscoreDTO(logic.getScore(), logic.getName());
                 try {
                     daoInstans.add(dto);
-                    daoInstans.save(getBaseContext(), dto);
+                    daoInstans.save(getBaseContext());
                 } catch (DataException e) {
                     e.printStackTrace();
                 }
+
+                ((Button) view).setBackgroundColor(Color.DKGRAY);
+                ((Button) view).setTextColor(Color.BLACK);
+
+                Intent initGame = new Intent(this, HighscoreActivity.class);
+                startActivity(initGame);
+                System.out.println("Trying to start HighscoreActivity.");
+
                 break;
 
             default:
