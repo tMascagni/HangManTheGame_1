@@ -77,28 +77,28 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         //Update image according to lives left.
         switch (logic.getLife()) {
             case 7:
-                gallow.setImageResource(R.drawable.galge_1);
+                gallow.setImageResource(R.drawable.galge_2);
                 break;
             case 6:
-                gallow.setImageResource(R.drawable.forkert1_1);
+                gallow.setImageResource(R.drawable.forkert1_2);
                 break;
             case 5:
-                gallow.setImageResource(R.drawable.forkert2_1);
+                gallow.setImageResource(R.drawable.forkert2_2);
                 break;
             case 4:
-                gallow.setImageResource(R.drawable.forkert3_1);
+                gallow.setImageResource(R.drawable.forkert3_2);
                 break;
             case 3:
-                gallow.setImageResource(R.drawable.forkert4_1);
+                gallow.setImageResource(R.drawable.forkert4_2);
                 break;
             case 2:
-                gallow.setImageResource(R.drawable.forkert5_1);
+                gallow.setImageResource(R.drawable.forkert5_2);
                 break;
             case 1:
-                gallow.setImageResource(R.drawable.forkert6_1);
+                gallow.setImageResource(R.drawable.forkert6_2);
                 break;
             case 0:
-                gallow.setImageResource(R.drawable.forkert7_1);
+                gallow.setImageResource(R.drawable.forkert7_2);
             default:
                 break;
         }

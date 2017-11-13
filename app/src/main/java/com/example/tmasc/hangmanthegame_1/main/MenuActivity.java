@@ -26,7 +26,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        //Henter ord fra nettet.
+        // Downloads list of words from internet.
         new wordFromURL().execute();
 
         //Instantiate.

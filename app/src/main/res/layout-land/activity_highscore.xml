@@ -4,33 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tmasc.hangmanthegame_1.main.HelpActivity">
+    tools:context="com.example.tmasc.hangmanthegame_1.main.HighscoreActivity">
 
     <ImageView
-        android:id="@+id/hangManTheGame"
+        android:id="@+id/imageView3"
         android:layout_width="386dp"
-        android:layout_height="100dp"
+        android:layout_height="123dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hangmanthegame_3" />
 
-    <TextView
-        android:id="@+id/helpText"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+    <ListView
+        android:id="@+id/highScoreList"
+        android:layout_width="400dp"
+        android:layout_height="224dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="75dp"
-        android:text="HangManTheGame is a take on the old guessing game Hangman. Here you try to guess the word which shows up. You have 7 lifes, if your guess is correct, then you get 10 points, if you guess wrong, you'll loose a life. Once all lifes are lost, the game is lost. If you guess the word, the game is won. You can continue the game to keep increasing your highscore."
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        android:nestedScrollingEnabled="false"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
+
 </android.support.constraint.ConstraintLayout>

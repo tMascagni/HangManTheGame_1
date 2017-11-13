@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hangmanthegame_1" />
+        app:srcCompat="@drawable/hangmanthegame_3" />
 
     <ImageView
         android:id="@+id/gallow"
@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hangManTheGame"
-        app:srcCompat="@drawable/forkert1_1" />
+        app:srcCompat="@drawable/forkert1_2" />
 
     <TableLayout
         android:id="@+id/tableLayout"

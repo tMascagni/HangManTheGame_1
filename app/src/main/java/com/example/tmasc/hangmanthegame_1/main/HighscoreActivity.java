@@ -1,7 +1,7 @@
 package com.example.tmasc.hangmanthegame_1.main;
 
 import android.content.Intent;
-import android.media.Image;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -11,14 +11,9 @@ import android.widget.TextView;
 import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.data.DAO.HighscoreDAO;
 import com.example.tmasc.hangmanthegame_1.data.DAO.IHighscoreDAO;
-import com.example.tmasc.hangmanthegame_1.data.DTO.HighscoreDTO;
 import com.example.tmasc.hangmanthegame_1.adapter.ListAdapter;
 import com.example.tmasc.hangmanthegame_1.data.exception.DataException;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 public class HighscoreActivity extends AppCompatActivity {
 

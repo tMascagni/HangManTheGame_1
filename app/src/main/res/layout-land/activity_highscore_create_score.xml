@@ -48,14 +48,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/forkert1_1" />
+        app:srcCompat="@drawable/forkert1_2" />
 
     <ImageView
         android:id="@+id/hangManTheGame"
         android:layout_width="386dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/hangmanthegame_1"
-        tools:layout_editor_absoluteX="148dp" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/hangmanthegame_3" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -354,8 +357,8 @@
             android:orientation="vertical"
             android:weightSum="7">
 
-            <ImageButton
-                android:id="@+id/backSpace"
+            <Button
+                android:id="@+id/invis_1"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="5dp"
@@ -364,12 +367,8 @@
                 android:background="@drawable/btn_color_shp"
                 android:text=""
                 android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-                app:layout_constraintEnd_toStartOf="@+id/name"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/typeName"
-                app:srcCompat="@android:drawable/ic_input_delete" />
+                android:visibility="invisible"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/v_btn"
@@ -432,21 +431,36 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/okBtn"
+                android:id="@+id/invis_2"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
-                android:elevation="0dp"
-                android:text="OK"
+                android:text=""
                 android:textSize="14sp"
+                android:visibility="invisible"
                 android:textStyle="bold" />
-
 
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/okBtn"
+        android:layout_width="54dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_color_shp"
+        android:text="OK"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/typeName" />
+
 
 </android.support.constraint.ConstraintLayout>
