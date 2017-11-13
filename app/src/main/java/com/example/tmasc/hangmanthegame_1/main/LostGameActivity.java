@@ -63,8 +63,7 @@ public class LostGameActivity extends AppCompatActivity implements View.OnClickL
         switch (view.getId()) {
             case R.id.storeScore:
                 if (view instanceof Button) {
-                    ((Button) view).setBackgroundColor(Color.DKGRAY);
-                    ((Button) view).setTextColor(Color.BLACK);
+                    ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
                 Intent initGame = new Intent(this, HighscoreCreateScoreActivity.class);
                 startActivity(initGame);

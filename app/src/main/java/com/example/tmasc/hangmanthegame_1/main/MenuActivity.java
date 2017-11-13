@@ -50,8 +50,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.Start_btn:
                 if (view instanceof Button) {
-                    ((Button) view).setBackgroundColor(Color.DKGRAY);
-                    ((Button) view).setTextColor(Color.BLACK);
+                    ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
                 Intent initGame = new Intent(this, GameActivity.class);
                 startActivity(initGame);
@@ -61,8 +60,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.High_btn:
                 if (view instanceof Button) {
-                    ((Button) view).setBackgroundColor(Color.DKGRAY);
-                    ((Button) view).setTextColor(Color.BLACK);
+                    ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
                 Intent initHighscore = new Intent(this, HighscoreActivity.class);
                 startActivity(initHighscore);
@@ -70,8 +68,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.Help_btn:
                 if (view instanceof Button) {
-                    ((Button) view).setBackgroundColor(Color.DKGRAY);
-                    ((Button) view).setTextColor(Color.BLACK);
+                    ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
                 Intent initHelp = new Intent(this, HelpActivity.class);
                 startActivity(initHelp);

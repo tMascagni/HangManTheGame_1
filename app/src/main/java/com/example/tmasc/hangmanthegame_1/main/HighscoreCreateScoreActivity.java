@@ -61,6 +61,35 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
 
         // Disable keyboard.
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+        // Update image according to lives left.
+        switch (logic.getLife()) {
+            case 7:
+                gallow.setImageResource(R.drawable.galge_2);
+                break;
+            case 6:
+                gallow.setImageResource(R.drawable.forkert1_2);
+                break;
+            case 5:
+                gallow.setImageResource(R.drawable.forkert2_2);
+                break;
+            case 4:
+                gallow.setImageResource(R.drawable.forkert3_2);
+                break;
+            case 3:
+                gallow.setImageResource(R.drawable.forkert4_2);
+                break;
+            case 2:
+                gallow.setImageResource(R.drawable.forkert5_2);
+                break;
+            case 1:
+                gallow.setImageResource(R.drawable.forkert6_2);
+                break;
+            case 0:
+                gallow.setImageResource(R.drawable.forkert7_2);
+            default:
+                break;
+        }
     }
 
     @Override
@@ -87,10 +116,8 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
 
             default:
                 String guess = ((Button) view).getText().toString();
-                ((Button) view).setTextColor(Color.BLACK);
-                ((Button) view).setBackgroundColor(Color.DKGRAY);
+                ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 name.append(guess);
-                view.setEnabled(false);
                 break;
         }
     }

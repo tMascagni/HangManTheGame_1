@@ -135,7 +135,7 @@ public class GameLogic {
                 if (getUsedLetters().contains(letter)) {
                     visibleWord = visibleWord + letter;
                 } else {
-                    visibleWord = visibleWord + "*";
+                    visibleWord = visibleWord + "▢";
                     theGameIsWon = false;
                 }
             }

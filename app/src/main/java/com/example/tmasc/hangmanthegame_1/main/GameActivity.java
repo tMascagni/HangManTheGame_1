@@ -1,7 +1,10 @@
 package com.example.tmasc.hangmanthegame_1.main;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -133,12 +136,12 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         if (view instanceof Button) {
             String guess = ((Button) view).getText().toString();
             guess (guess);
-            ((Button) view).setTextColor(Color.BLACK);
-            ((Button) view).setBackgroundColor(Color.DKGRAY);
+            ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
             view.setEnabled(false);
         }
 
     }
+
 
     @Override
     public void onBackPressed() {

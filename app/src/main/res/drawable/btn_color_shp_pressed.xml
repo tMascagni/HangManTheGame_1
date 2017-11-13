@@ -4,8 +4,8 @@
     <item>
         <shape android:shape="rectangle">
             <!--- benyt #444444 som farvekode -->
-            <solid android:color="@android:color/darker_gray"/>
-            <stroke android:color="@android:color/darker_gray" android:width="2dp"/>
+            <solid android:color="@color/colorBtnPressed"/>
+            <stroke android:color="@android:color/black" android:width="2dp"/>
             <!--- Conors -->
             <corners android:radius="10dp"/>
         </shape>

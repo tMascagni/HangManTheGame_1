@@ -62,28 +62,28 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
         // Update image according to lives left.
         switch (logic.getLife()) {
             case 7:
-                gallow.setImageResource(R.drawable.galge_1);
+                gallow.setImageResource(R.drawable.galge_2);
                 break;
             case 6:
-                gallow.setImageResource(R.drawable.forkert1_1);
+                gallow.setImageResource(R.drawable.forkert1_2);
                 break;
             case 5:
-                gallow.setImageResource(R.drawable.forkert2_1);
+                gallow.setImageResource(R.drawable.forkert2_2);
                 break;
             case 4:
-                gallow.setImageResource(R.drawable.forkert3_1);
+                gallow.setImageResource(R.drawable.forkert3_2);
                 break;
             case 3:
-                gallow.setImageResource(R.drawable.forkert4_1);
+                gallow.setImageResource(R.drawable.forkert4_2);
                 break;
             case 2:
-                gallow.setImageResource(R.drawable.forkert5_1);
+                gallow.setImageResource(R.drawable.forkert5_2);
                 break;
             case 1:
-                gallow.setImageResource(R.drawable.forkert6_1);
+                gallow.setImageResource(R.drawable.forkert6_2);
                 break;
             case 0:
-                gallow.setImageResource(R.drawable.forkert7_1);
+                gallow.setImageResource(R.drawable.forkert7_2);
             default:
                 break;
         }
@@ -94,8 +94,7 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
         switch (view.getId()) {
             case R.id.continueGameBtn:
                 if (view instanceof Button) {
-                    ((Button) view).setBackgroundColor(Color.DKGRAY);
-                    ((Button) view).setTextColor(Color.BLACK);
+                    ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
                 Intent initGame = new Intent(this, GameActivity.class);
                 startActivity(initGame);
@@ -103,8 +102,7 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.storeScoreBtn:
                 if (view instanceof Button) {
-                    ((Button) view).setBackgroundColor(Color.DKGRAY);
-                    ((Button) view).setTextColor(Color.BLACK);
+                    ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
                 Intent initHighscore = new Intent(this, HighscoreCreateScoreActivity.class);
                 startActivity(initHighscore);

@@ -20,7 +20,7 @@ public class wordFromURL extends AsyncTask<String, String, List<String>>{
         System.out.println("Starting AsyncTask");
 
         try {
-            String data = gameLogic.fetchURL("https://en.wikipedia.org/wiki/Wikipedia:Random");
+            String data = gameLogic.fetchURL("https://www.urbandictionary.com/random.php");
 
             // Removes all the special characters.
             data = data.replaceAll("<.+?>", " ").toLowerCase().replaceAll("[^a-z]", " ");
