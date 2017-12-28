@@ -58,7 +58,7 @@
         android:layout_marginStart="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/hangmanthegame_3" />
+        app:srcCompat="@drawable/hangman_1" />
 
     <TableLayout
         android:id="@+id/tableLayout"

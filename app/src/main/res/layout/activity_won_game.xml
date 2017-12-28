@@ -17,7 +17,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hangmanthegame_3" />
+        app:srcCompat="@drawable/hangman_1" />
 
     <ImageView
         android:id="@+id/gallow"
@@ -76,7 +76,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:text="Press continue to keep going or store your data via the store button."
+        android:text="Press continue to keep going or store your score via the store button."
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
