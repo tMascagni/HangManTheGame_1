@@ -1,7 +1,6 @@
 package com.example.tmasc.hangmanthegame_1.main;
 
 import android.content.Intent;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,75 +11,62 @@ import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
 
-public class MenuActivity extends AppCompatActivity implements View.OnClickListener{
+public class ChooseGameActivity extends AppCompatActivity implements View.OnClickListener{
 
 
-    private Button Start_btn, High_btn, Help_btn, Settings_btn;
+    private Button One_player_btn, Two_player_btn;
     private ImageView welcomeView, hangManTheGame;
 
-    private static boolean isPlaying = false;
     private final GameLogic logic = GameLogic.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-
-        // Downloads list of words from internet.
-        // new wordFromURL().execute();
+        setContentView(R.layout.activity_choose_game);
 
         //Instantiate.
-        Start_btn = (Button) findViewById(R.id.Start_btn);
-        High_btn = (Button) findViewById(R.id.High_btn);
-        Help_btn = (Button) findViewById(R.id.Help_btn);
-        Settings_btn = (Button) findViewById(R.id.Settings_btn);
+        One_player_btn = (Button) findViewById(R.id.One_player_btn);
+        Two_player_btn = (Button) findViewById(R.id.Two_player_btn);
         welcomeView = (ImageView) findViewById(R.id.welcomeView);
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
 
         //I/O listeners.
-        Start_btn.setOnClickListener(this);
-        High_btn.setOnClickListener(this);
-        Help_btn.setOnClickListener(this);
-        Settings_btn.setOnClickListener(this);
+        One_player_btn.setOnClickListener(this);
+        Two_player_btn.setOnClickListener(this);
         welcomeView.setOnClickListener(this);
         hangManTheGame.setOnClickListener(this);
+
+        if (logic.getisOnline() == true) {
+            // Downloads list of words from internet.
+            new wordFromURL().execute();
+        }
+
+        else {
+
+        }
     }
 
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.Start_btn:
+            case R.id.One_player_btn:
                 if (view instanceof Button) {
                     ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
-                Intent initGame = new Intent(this, ChooseGameActivity.class);
+                Intent initGame = new Intent(this, GameActivity.class);
                 startActivity(initGame);
                 System.out.println("Trying to start ChooseGameActivity.");
+                // Resets the logic layer.
+                logic.reset();
                 break;
-            case R.id.High_btn:
+            case R.id.Two_player_btn: // Denne skal gå til en liste over ord
                 if (view instanceof Button) {
                     ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
                 Intent initHighscore = new Intent(this, HighscoreActivity.class);
                 startActivity(initHighscore);
                 System.out.println("Trying to start HighscoreActivity.");
-                break;
-            case R.id.Settings_btn:
-                if (view instanceof Button) {
-                    ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
-                }
-                Intent initSettings = new Intent(this, SettingsActivity.class);
-                startActivity(initSettings);
-                System.out.println("Trying to start SettingsActivity.");
-                break;
-            case R.id.Help_btn:
-                if (view instanceof Button) {
-                    ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
-                }
-                Intent initHelp = new Intent(this, HelpActivity.class);
-                startActivity(initHelp);
-                System.out.println("Trying to start HelpActivity.");
                 break;
             default:
                 break;

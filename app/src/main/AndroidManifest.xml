@@ -19,12 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.HelpActivity"></activity>
-        <activity android:name=".main.HighscoreActivity"></activity>
-        <activity android:name=".main.GameActivity"></activity>
-        <activity android:name=".main.LostGameActivity"></activity>
-        <activity android:name=".main.WonGameActivity"></activity>
-        <activity android:name=".main.HighscoreCreateScoreActivity"></activity>
+        <activity android:name=".main.HelpActivity" />
+        <activity android:name=".main.HighscoreActivity" />
+        <activity android:name=".main.GameActivity" />
+        <activity android:name=".main.LostGameActivity" />
+        <activity android:name=".main.WonGameActivity" />
+        <activity android:name=".main.HighscoreCreateScoreActivity" />
+        <activity android:name=".main.ChooseGameActivity" />
+        <activity android:name=".main.SettingsActivity"></activity>
     </application>
 
 </manifest>

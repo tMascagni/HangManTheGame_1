@@ -111,7 +111,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         // Make the logic controller take a guess!
         logic.guessLetter(guess.toLowerCase());
 
-        // Update the display, to see the next status after the guess-
+        // Update the display, to see the next status after the guess.
         updateDisplay();
 
         // Check whether the game is lost or not.

@@ -5,6 +5,7 @@ import android.text.Editable;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,6 +17,7 @@ import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 public class GameLogic {
 
         private List<String> possibleWords = new ArrayList<String>();
+        private List<String> possibleOfflineWords = new ArrayList<String>();
         private String theWord;
         private ArrayList<String> UsedLetters = new ArrayList<String>();
         private String visibleWord;
@@ -30,6 +32,16 @@ public class GameLogic {
         private final Random random = new Random();
         private int score = 0;
         private String name = "Name";
+        private boolean isOnline = false;
+
+        public boolean getisOnline() {
+            return isOnline;
+        }
+
+        public void setOnline(boolean online) {
+        isOnline = online;
+        }
+
 
         public ArrayList<String> getUsedLetters() {
 
@@ -76,11 +88,11 @@ public class GameLogic {
         public int getScore() {
             return score; }
         public String getName() {return name; }
-        public void setName(String navn) {this.name = navn; }
+        public void setName(String navn) {
+            this.name = navn; }
 
         private GameLogic() {
         }
-
 
         static {
             try {
@@ -127,18 +139,29 @@ public class GameLogic {
             updateVisibleWord();
         }
 
+        // Her opdaterer den ordet. Denne skal laves om til at den skal gøre det ud fra om isOnline er True eller False.
         private void updateVisibleWord() {
-            visibleWord = "";
-            theGameIsWon = true;
-            for (int n = 0; n < theWord.length(); n++) {
-                String letter = theWord.substring(n, n + 1);
-                if (getUsedLetters().contains(letter)) {
-                    visibleWord = visibleWord + letter;
-                } else {
-                    visibleWord = visibleWord + "▢";
-                    theGameIsWon = false;
+                visibleWord = "";
+                theGameIsWon = true;
+                for (int n = 0; n < theWord.length(); n++) {
+                    String letter = theWord.substring(n, n + 1);
+                    if (getUsedLetters().contains(letter)) {
+                        visibleWord = visibleWord + letter;
+                    } else {
+                        visibleWord = visibleWord + "▢";
+                        theGameIsWon = false;
+                    }
                 }
             }
+
+
+        public List addOfflineWord() {
+            possibleOfflineWords.add("car");
+            possibleOfflineWords.add("android");
+            possibleOfflineWords.add("programming");
+            possibleOfflineWords.add("line");
+            possibleOfflineWords.add("snap");
+            return possibleOfflineWords;
         }
 
         public void guessLetter(String letter) {
