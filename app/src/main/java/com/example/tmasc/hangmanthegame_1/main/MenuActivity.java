@@ -26,14 +26,10 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        // Downloads list of words from internet.
-        // new wordFromURL().execute();
-
         //Instantiate.
         Start_btn = (Button) findViewById(R.id.Start_btn);
         High_btn = (Button) findViewById(R.id.High_btn);
         Help_btn = (Button) findViewById(R.id.Help_btn);
-        Settings_btn = (Button) findViewById(R.id.Settings_btn);
         welcomeView = (ImageView) findViewById(R.id.welcomeView);
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
 
@@ -41,7 +37,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         Start_btn.setOnClickListener(this);
         High_btn.setOnClickListener(this);
         Help_btn.setOnClickListener(this);
-        Settings_btn.setOnClickListener(this);
         welcomeView.setOnClickListener(this);
         hangManTheGame.setOnClickListener(this);
     }
@@ -65,14 +60,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 Intent initHighscore = new Intent(this, HighscoreActivity.class);
                 startActivity(initHighscore);
                 System.out.println("Trying to start HighscoreActivity.");
-                break;
-            case R.id.Settings_btn:
-                if (view instanceof Button) {
-                    ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
-                }
-                Intent initSettings = new Intent(this, SettingsActivity.class);
-                startActivity(initSettings);
-                System.out.println("Trying to start SettingsActivity.");
                 break;
             case R.id.Help_btn:
                 if (view instanceof Button) {

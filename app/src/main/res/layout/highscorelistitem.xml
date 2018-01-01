@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -44,7 +44,7 @@
         android:textColor="@color/colorAccent"
         android:text="Name"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintBottom_toTopOf="@+id/word"
         app:layout_constraintEnd_toStartOf="@+id/scoreTitle"
         app:layout_constraintStart_toStartOf="parent" />
 

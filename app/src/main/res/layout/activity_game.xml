@@ -7,7 +7,7 @@
     tools:context="com.example.tmasc.hangmanthegame_1.main.GameActivity">
 
     <ImageView
-        android:id="@+id/hangmanthegame"
+        android:id="@+id/hangManTheGame"
         android:layout_width="386dp"
         android:layout_height="123dp"
         android:layout_marginLeft="8dp"
@@ -29,7 +29,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hangmanthegame"
+        app:layout_constraintTop_toBottomOf="@+id/hangManTheGame"
         app:srcCompat="@drawable/galge_2" />
 
     <TextView
@@ -65,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintLeft_toRightOf="@+id/gallow"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hangmanthegame" />
+        app:layout_constraintTop_toBottomOf="@+id/hangManTheGame" />
 
     <TextView
         android:id="@+id/livesLeft"
@@ -97,7 +97,7 @@
         android:textSize="20sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/gallow"
-        app:layout_constraintTop_toBottomOf="@+id/hangmanthegame" />
+        app:layout_constraintTop_toBottomOf="@+id/hangManTheGame" />
 
     <TextView
         android:id="@+id/pointsPoint"

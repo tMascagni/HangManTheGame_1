@@ -16,8 +16,9 @@ import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 
 public class GameLogic {
 
+        /* INITIALISES */
+
         private List<String> possibleWords = new ArrayList<String>();
-        private List<String> possibleOfflineWords = new ArrayList<String>();
         private String theWord;
         private ArrayList<String> UsedLetters = new ArrayList<String>();
         private String visibleWord;
@@ -34,37 +35,66 @@ public class GameLogic {
         private String name = "Name";
         private boolean isOnline = false;
 
+        /* GETTERS - SETTERS */
+
         public boolean getisOnline() {
             return isOnline;
         }
-
         public void setOnline(boolean online) {
         isOnline = online;
         }
+        public int getTotalGuesses() {
+        return totalGuesses;
+    }
+        public int getLife() {
+        return life;
+    }
+        public int getScore() {
+        return score; }
+        public String getName() {return name; }
+        public void setName(String navn) {
+        this.name = navn; }
+        public void setPossibleWords(List<String> list) {
+        this.possibleWords = list;
+    }
+        public List getPossibleWords() {
+            return possibleWords;
+        }
+        public String getVisibleWord() {
 
+        return visibleWord;
+    }
+        public String getTheWord() {
+
+        return theWord;
+    }
+
+        /* SINGLETON */
+
+        private GameLogic() {
+        possibleWords.add("car");
+        possibleWords.add("android");
+        possibleWords.add("programming");
+        possibleWords.add("line");
+        possibleWords.add("snap");
+    }
+        static {
+        try {
+            instance = new GameLogic();
+        }
+        catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+        public static synchronized GameLogic getInstance() {
+        return instance;
+    }
+
+        /* FUNCTIONALITY */
 
         public ArrayList<String> getUsedLetters() {
 
             return UsedLetters;
-        }
-        public void setPossibleWords(List<String> list) {
-            this.possibleWords = list;
-        }
-        public String getVisibleWord() {
-
-            return visibleWord;
-        }
-        public String getTheWord() {
-
-            return theWord;
-        }
-        public int getWrongLetterAmount() {
-
-            return wrongLetterAmount;
-        }
-        public boolean isTheLastLetterCorrect() {
-
-            return lastLetterWasCorrect;
         }
         public boolean isTheGameWon() {
 
@@ -74,39 +104,6 @@ public class GameLogic {
 
             return theGameIsLost;
         }
-        public boolean isTheGameOver() {
-
-            return theGameIsLost || theGameIsWon;
-        }
-
-        public int getTotalGuesses() {
-            return totalGuesses;
-        }
-        public int getLife() {
-            return life;
-        }
-        public int getScore() {
-            return score; }
-        public String getName() {return name; }
-        public void setName(String navn) {
-            this.name = navn; }
-
-        private GameLogic() {
-        }
-
-        static {
-            try {
-                instance = new GameLogic();
-            }
-            catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        }
-
-        public static synchronized GameLogic getInstance() {
-            return instance;
-        }
-
         public static String fetchURL(String url) throws IOException {
         System.out.println("Fetching data from " + url);
         BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
@@ -118,11 +115,6 @@ public class GameLogic {
         }
         return sb.toString();
     }
-
-        private String getRandomPossibleWord() {
-            return possibleWords.get(random.nextInt(possibleWords.size()));
-        }
-
         public void reset() {
             getUsedLetters().clear();
             wrongLetterAmount = 0;
@@ -132,14 +124,11 @@ public class GameLogic {
             theGameIsWon = false;
             theGameIsLost = false;
         }
-
         public void updateWord(){
             getUsedLetters().clear();
             theWord = possibleWords.get(new Random().nextInt(possibleWords.size()));
             updateVisibleWord();
         }
-
-        // Her opdaterer den ordet. Denne skal laves om til at den skal gøre det ud fra om isOnline er True eller False.
         private void updateVisibleWord() {
                 visibleWord = "";
                 theGameIsWon = true;
@@ -153,17 +142,6 @@ public class GameLogic {
                     }
                 }
             }
-
-
-        public List addOfflineWord() {
-            possibleOfflineWords.add("car");
-            possibleOfflineWords.add("android");
-            possibleOfflineWords.add("programming");
-            possibleOfflineWords.add("line");
-            possibleOfflineWords.add("snap");
-            return possibleOfflineWords;
-        }
-
         public void guessLetter(String letter) {
             totalGuesses++;
             if (letter.length() != 1) return;
@@ -188,17 +166,6 @@ public class GameLogic {
                 }
             }
             updateVisibleWord();
-        }
-
-        public void logStatus() {
-            System.out.println("---------- ");
-            System.out.println("- ordet (skult) = " + theWord);
-            System.out.println("- synligtOrd = " + visibleWord);
-            System.out.println("- forkerteBogstaver = " + getWrongLetterAmount());
-            System.out.println("- brugeBogstaver = " + getUsedLetters());
-            if (theGameIsLost) System.out.println("- THE GAME IS LOST");
-            if (theGameIsWon) System.out.println("- THE GAME IS WON");
-            System.out.println("---------- ");
         }
 }
 

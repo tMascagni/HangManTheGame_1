@@ -4,6 +4,8 @@ import android.content.Intent;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,44 +15,31 @@ import com.example.tmasc.hangmanthegame_1.data.DAO.HighscoreDAO;
 import com.example.tmasc.hangmanthegame_1.data.DAO.IHighscoreDAO;
 import com.example.tmasc.hangmanthegame_1.adapter.ListAdapter;
 import com.example.tmasc.hangmanthegame_1.data.exception.DataException;
+import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
+
+import java.util.List;
 
 
-public class HighscoreActivity extends AppCompatActivity {
+public class ChooseWordActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ImageView hangManTheGame;
-    private TextView highScore;
-    public ListView HighScoreList;
-    public ListAdapter adapter;
+    public ListView wordList;
 
-    HighscoreDAO dao = HighscoreDAO.getInstance();
+    private final GameLogic logic = GameLogic.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_highscore);
+        setContentView(R.layout.activity_choose_word);
 
-        IHighscoreDAO dao = HighscoreDAO.getInstance();
-
-        try {
-            dao.load(getBaseContext());
-            dao.save(getBaseContext());
-            System.out.println("Size: " + dao.getList().size());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            adapter = new ListAdapter(getBaseContext(), R.layout.highscorelistitem, dao.getList());
-        } catch (DataException e) {
-            e.printStackTrace();
-        }
-
-        HighScoreList = (ListView) findViewById(R.id.highScoreList);
-
-        HighScoreList.setAdapter(adapter);
+        ArrayAdapter<String> a = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, logic.getPossibleWords());
 
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
+        wordList = (ListView) findViewById(R.id.wordList);
+
+        wordList.setAdapter(a);
     }
+
 
     @Override
     public void onBackPressed() {
@@ -58,5 +47,10 @@ public class HighscoreActivity extends AppCompatActivity {
         Intent initGame = new Intent(this, MenuActivity.class);
         startActivity(initGame);
         System.out.println("Trying to start MenuActivity.");
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

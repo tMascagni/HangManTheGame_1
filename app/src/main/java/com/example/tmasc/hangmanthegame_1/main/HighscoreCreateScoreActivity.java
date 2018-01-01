@@ -8,10 +8,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.data.DAO.HighscoreDAO;
@@ -51,7 +49,7 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
         gallow = (ImageView) findViewById(R.id.gallow);
         typeName = (TextView) findViewById(R.id.typeName);
-        name = (EditText) findViewById(R.id.name);
+        name = (EditText) findViewById(R.id.word);
 
         // for-loop to create all the buttons.
         for (int i = 0; i < btnArray.length; i++) {

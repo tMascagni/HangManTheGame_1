@@ -16,7 +16,7 @@ public class ChooseGameActivity extends AppCompatActivity implements View.OnClic
 
     private Button One_player_btn, Two_player_btn;
     private ImageView welcomeView, hangManTheGame;
-
+    
     private final GameLogic logic = GameLogic.getInstance();
 
     @Override
@@ -36,16 +36,9 @@ public class ChooseGameActivity extends AppCompatActivity implements View.OnClic
         welcomeView.setOnClickListener(this);
         hangManTheGame.setOnClickListener(this);
 
-        if (logic.getisOnline() == true) {
-            // Downloads list of words from internet.
-            new wordFromURL().execute();
+        // Downloads list of words from internet.
+        new wordFromURL().execute();
         }
-
-        else {
-
-        }
-    }
-
 
     @Override
     public void onClick(View view) {
@@ -56,7 +49,7 @@ public class ChooseGameActivity extends AppCompatActivity implements View.OnClic
                 }
                 Intent initGame = new Intent(this, GameActivity.class);
                 startActivity(initGame);
-                System.out.println("Trying to start ChooseGameActivity.");
+                System.out.println("Trying to start GameActivity.");
                 // Resets the logic layer.
                 logic.reset();
                 break;
@@ -64,12 +57,20 @@ public class ChooseGameActivity extends AppCompatActivity implements View.OnClic
                 if (view instanceof Button) {
                     ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
-                Intent initHighscore = new Intent(this, HighscoreActivity.class);
-                startActivity(initHighscore);
+                Intent initChooseWordActivity = new Intent(this, ChooseWordActivity.class);
+                startActivity(initChooseWordActivity);
                 System.out.println("Trying to start HighscoreActivity.");
                 break;
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent initGame = new Intent(this, MenuActivity.class);
+        startActivity(initGame);
+        System.out.println("Trying to start MenuActivity.");
     }
 }

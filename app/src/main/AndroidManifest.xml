@@ -26,7 +26,7 @@
         <activity android:name=".main.WonGameActivity" />
         <activity android:name=".main.HighscoreCreateScoreActivity" />
         <activity android:name=".main.ChooseGameActivity" />
-        <activity android:name=".main.SettingsActivity"></activity>
+        <activity android:name=".main.ChooseWordActivity"></activity>
     </application>
 
 </manifest>

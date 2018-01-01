@@ -7,7 +7,7 @@
     tools:context="com.example.tmasc.hangmanthegame_1.main.GameActivity">
 
     <ImageView
-        android:id="@+id/hangmanthegame"
+        android:id="@+id/hangManTheGame"
         android:layout_width="386dp"
         android:layout_height="100dp"
         android:layout_marginLeft="8dp"

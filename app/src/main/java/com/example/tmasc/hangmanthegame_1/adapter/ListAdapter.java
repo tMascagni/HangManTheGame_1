@@ -39,7 +39,7 @@ public class ListAdapter extends ArrayAdapter<HighscoreDTO> {
 
         if (p != null) {
             TextView score = (TextView) v.findViewById(R.id.score);
-            TextView name = (TextView) v.findViewById(R.id.name);
+            TextView name = (TextView) v.findViewById(R.id.word);
 
             if (score != null) {
                 score.setText(String.valueOf(p.getScore()));
