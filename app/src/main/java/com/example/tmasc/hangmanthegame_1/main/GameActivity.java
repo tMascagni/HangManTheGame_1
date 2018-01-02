@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tmasc.hangmanthegame_1.R;
+import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
 
 

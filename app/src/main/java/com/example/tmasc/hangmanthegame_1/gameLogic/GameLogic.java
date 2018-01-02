@@ -50,22 +50,22 @@ public class GameLogic {
         return life;
     }
         public int getScore() {
-        return score; }
+        return score;
+        }
         public String getName() {return name; }
         public void setName(String navn) {
-        this.name = navn; }
+        this.name = navn;
+        }
         public void setPossibleWords(List<String> list) {
         this.possibleWords = list;
-    }
+        }
         public List getPossibleWords() {
             return possibleWords;
         }
         public String getVisibleWord() {
-
         return visibleWord;
-    }
+        }
         public String getTheWord() {
-
         return theWord;
     }
 
