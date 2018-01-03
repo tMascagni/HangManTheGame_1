@@ -51,8 +51,19 @@ public class wordFromURL extends AsyncTask<String, String, List<String>>{
     @Override
     protected void onPostExecute(List<String> strings) {
         super.onPostExecute(strings);
-        gameLogic.setPossibleWords(strings);
-        gameLogic.updateWord();
+        if (strings.size() >= 1) {
+            gameLogic.setPossibleWords(strings);
+            gameLogic.updateWord();
+        }
+        else {
+            strings.add("car");
+            strings.add("android");
+            strings.add("programming");
+            strings.add("line");
+            strings.add("snap");
+            gameLogic.setPossibleWords(strings);
+            gameLogic.updateWord();
+        }
 
         for (int i = 0; i < strings.size(); i++)
             System.out.println("Word [" + i + "]: " + strings.get(i));
