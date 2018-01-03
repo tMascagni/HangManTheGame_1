@@ -72,11 +72,11 @@ public class GameLogic {
         /* SINGLETON */
 
         private GameLogic() {
-        possibleWords.add("car");
-        possibleWords.add("android");
-        possibleWords.add("programming");
-        possibleWords.add("line");
-        possibleWords.add("snap");
+        //possibleWords.add("car");
+        //possibleWords.add("android");
+        //possibleWords.add("programming");
+        //possibleWords.add("line");
+        //possibleWords.add("snap");
     }
         static {
         try {
