@@ -1,4 +1,4 @@
-package com.example.tmasc.hangmanthegame_1.main;
+package com.example.tmasc.hangmanthegame_1.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -24,19 +24,19 @@ public class ChooseGameActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_game);
 
-        //Instantiate.
+        /* Instantiate. */
         One_player_btn = (Button) findViewById(R.id.One_player_btn);
         Two_player_btn = (Button) findViewById(R.id.Two_player_btn);
         welcomeView = (ImageView) findViewById(R.id.welcomeView);
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
 
-        //I/O listeners.
+        /* I/O listeners. */
         One_player_btn.setOnClickListener(this);
         Two_player_btn.setOnClickListener(this);
         welcomeView.setOnClickListener(this);
         hangManTheGame.setOnClickListener(this);
 
-        // Downloads list of words from internet.
+        /* Downloads list of words from internet. */
         new wordFromURL().execute();
         }
 
@@ -50,10 +50,11 @@ public class ChooseGameActivity extends AppCompatActivity implements View.OnClic
                 Intent initGame = new Intent(this, GameActivity.class);
                 startActivity(initGame);
                 System.out.println("Trying to start GameActivity.");
-                // Resets the logic layer.
-                logic.reset();
+                logic.reset(); // Resets the logic layer.
+                logic.updateWord(); // Updates the word you have to guess.
                 break;
-            case R.id.Two_player_btn: // Denne skal gå til en liste over ord
+
+            case R.id.Two_player_btn:
                 if (view instanceof Button) {
                     ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
                 }
@@ -61,6 +62,7 @@ public class ChooseGameActivity extends AppCompatActivity implements View.OnClic
                 startActivity(initChooseWordActivity);
                 System.out.println("Trying to start HighscoreActivity.");
                 break;
+
             default:
                 break;
         }

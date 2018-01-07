@@ -5,18 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
-
 import com.example.tmasc.hangmanthegame_1.R;
-import com.example.tmasc.hangmanthegame_1.data.DTO.HighscoreDTO;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
-
-import org.w3c.dom.Text;
-
 import java.util.List;
 
-import static android.media.CamcorderProfile.get;
 
 public class PickWordAdapter extends ArrayAdapter<String> {
 
@@ -31,6 +24,7 @@ public class PickWordAdapter extends ArrayAdapter<String> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        String theWord = list.get(position);
 
         View v = convertView;
 
@@ -40,15 +34,8 @@ public class PickWordAdapter extends ArrayAdapter<String> {
             v = vi.inflate(R.layout.choosewordlistitem, null);
         }
 
-        List<String> p = logic.getPossibleWords();
-
-        if (p != null) {
-            TextView word = (TextView) v.findViewById(R.id.word);
-
-          //  if (word != null) {
-          //      word.setText(String.valueOf(p));
-          //  }
-        }
+        TextView word = (TextView) v.findViewById(R.id.word);
+        word.setText(theWord);
 
         return v;
     }

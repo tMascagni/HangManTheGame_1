@@ -1,4 +1,4 @@
-package com.example.tmasc.hangmanthegame_1.main;
+package com.example.tmasc.hangmanthegame_1.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -51,7 +51,8 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
         storeScoreBtn = (Button) findViewById(R.id.storeScoreBtn);
         KonfettiView viewKonfetti = (KonfettiView) findViewById(R.id.viewKonfetti);
 
-        // Konfetti
+        /* Confetti */
+        /* This is taken from GitHub DanielMartinus - Konfetti */
         viewKonfetti.build()
                 .addColors(Color.RED, Color.YELLOW, Color.MAGENTA)
                 .setDirection(0.0, 359.0)
@@ -65,25 +66,25 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
         ;
 
 
-        // I/O listeners.
+        /* I/O listeners. */
         continueGameBtn.setOnClickListener(this);
         storeScoreBtn.setOnClickListener(this);
 
-        //Update display.
+        /* Update display. */
         updateDisplay();
     }
 
     public void updateDisplay() {
-        // Update guesses counter.
+        /* Update guesses counter. */
         guesses.setText(Integer.toString(logic.getTotalGuesses()));
 
-        // Update lifes left
+        /* Update lifes left */
         lifesPoints.setText((Integer.toString((logic.getLife()))));
 
-        // Update points
+        /* Update points */
         pointsPoints.setText((Integer.toString(logic.getScore())));
 
-        // Update image according to lives left.
+        /* Update image according to lives left. */
         switch (logic.getLife()) {
             case 7:
                 gallow.setImageResource(R.drawable.galge_2);
@@ -136,7 +137,6 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
                 break;
         }
     }
-
 
     @Override
     public void onBackPressed() {

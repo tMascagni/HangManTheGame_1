@@ -1,4 +1,4 @@
-package com.example.tmasc.hangmanthegame_1.main;
+package com.example.tmasc.hangmanthegame_1.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -32,11 +32,11 @@ public class LostGameActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost_game);
 
-        // Play sound.
+        /* Play sound. */
         MediaPlayer win_sound = MediaPlayer.create(this, R.raw.loose);
         win_sound.start();
 
-        // Initiate
+        /* Initiate */
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
         hangMan = (ImageView) findViewById(R.id.hangMan);
         lostTheGame = (TextView) findViewById(R.id.lostTheGame);
@@ -47,18 +47,18 @@ public class LostGameActivity extends AppCompatActivity implements View.OnClickL
         goBack = (TextView) findViewById(R.id.continueTxt);
         storeScore = (Button) findViewById(R.id.storeScore);
 
-        // I/O listeners.
+        /* I/O listeners. */
         storeScore.setOnClickListener(this);
 
-        //Update function
+        /* Update function */
         updateDisplay();
     }
 
     public void updateDisplay() {
-        // Update theWord.
+        /* Update theWord. */
         theWord.setText(logic.getTheWord());
 
-        // Update Points.
+        /* Update Points. */
         points.setText(String.valueOf(logic.getScore()));
     }
 

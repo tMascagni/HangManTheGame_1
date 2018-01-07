@@ -1,4 +1,4 @@
-package com.example.tmasc.hangmanthegame_1.main;
+package com.example.tmasc.hangmanthegame_1.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

@@ -1,18 +1,13 @@
 package com.example.tmasc.hangmanthegame_1.gameLogic;
 
-import android.text.Editable;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 
 public class GameLogic {
 
@@ -33,16 +28,9 @@ public class GameLogic {
         private final Random random = new Random();
         private int score = 0;
         private String name = "Name";
-        private boolean isOnline = false;
 
         /* GETTERS - SETTERS */
 
-        public boolean getisOnline() {
-            return isOnline;
-        }
-        public void setOnline(boolean online) {
-        isOnline = online;
-        }
         public int getTotalGuesses() {
         return totalGuesses;
     }

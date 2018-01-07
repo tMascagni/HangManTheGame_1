@@ -1,4 +1,4 @@
-package com.example.tmasc.hangmanthegame_1.main;
+package com.example.tmasc.hangmanthegame_1.activities;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -45,22 +45,22 @@ public class HighscoreCreateScoreActivity extends AppCompatActivity implements V
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscore_create_score);
 
-        // Instantiate.
+        /* Instantiate. */
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
         gallow = (ImageView) findViewById(R.id.gallow);
         typeName = (TextView) findViewById(R.id.typeName);
         name = (EditText) findViewById(R.id.word);
 
-        // for-loop to create all the buttons.
+        /* for-loop to create all the buttons. */
         for (int i = 0; i < btnArray.length; i++) {
             btnArray[i] = (Button) findViewById(btnIdArray[i]);
             btnArray[i].setOnClickListener(this);
         }
 
-        // Disable keyboard.
+        /* Disable keyboard. */
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
-        // Update image according to lives left.
+        /* Update image according to lives left. */
         switch (logic.getLife()) {
             case 7:
                 gallow.setImageResource(R.drawable.galge_2);

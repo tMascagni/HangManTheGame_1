@@ -1,7 +1,6 @@
-package com.example.tmasc.hangmanthegame_1.main;
+package com.example.tmasc.hangmanthegame_1.activities;
 
 import android.content.Intent;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.tmasc.hangmanthegame_1.R;
-import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener{

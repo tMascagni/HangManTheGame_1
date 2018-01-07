@@ -12,21 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.MenuActivity">
+        <activity android:name=".activities.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.HelpActivity" />
-        <activity android:name=".main.HighscoreActivity" />
-        <activity android:name=".main.GameActivity" />
-        <activity android:name=".main.LostGameActivity" />
-        <activity android:name=".main.WonGameActivity" />
-        <activity android:name=".main.HighscoreCreateScoreActivity" />
-        <activity android:name=".main.ChooseGameActivity" />
-        <activity android:name=".main.ChooseWordActivity"></activity>
+        <activity android:name=".activities.HelpActivity" />
+        <activity android:name=".activities.HighscoreActivity" />
+        <activity android:name=".activities.GameActivity" />
+        <activity android:name=".activities.LostGameActivity" />
+        <activity android:name=".activities.WonGameActivity" />
+        <activity android:name=".activities.HighscoreCreateScoreActivity" />
+        <activity android:name=".activities.ChooseGameActivity" />
+        <activity android:name=".activities.ChooseWordActivity"></activity>
     </application>
 
 </manifest>

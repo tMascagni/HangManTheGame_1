@@ -1,10 +1,6 @@
-package com.example.tmasc.hangmanthegame_1.main;
+package com.example.tmasc.hangmanthegame_1.activities;
 
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tmasc.hangmanthegame_1.R;
-import com.example.tmasc.hangmanthegame_1.asyncTask.wordFromURL;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
 
 
@@ -43,10 +38,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-        // Updates the word you have to guess.
-        logic.updateWord();
-
-        // Instantiate.
+        /* Instantiate */
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
         gallow = (ImageView) findViewById(R.id.gallow);
         showWord = (TextView) findViewById(R.id.showWord);
@@ -55,30 +47,49 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         points = (TextView) findViewById(R.id.score);
         pointsPoints = (TextView) findViewById(R.id.pointsPoint);
 
-        // for-loop to create all the buttons.
+        /* for-loop to create all the buttons. */
         for (int i = 0; i < btnArray.length; i++) {
             btnArray[i] = (Button) findViewById(btnIdArray[i]);
             btnArray[i].setOnClickListener(this);
         }
 
-        // Update the display with the logic layer values.
+
+        /* If the word was picked through the ChooseWordActivity,
+        use that, else use the standard methods.
+
+        FIX THIS!!
+        */
+
+        Bundle extras = getIntent().getExtras();
+
+        if(extras != null){
+        //    logic.
+        }
+
+        else {
+
+        }
+
+
+        /* Update the display with the logic layer values. */
         updateDisplay();
 
-        // Disable keyboard.
+        /* Disable keyboard. */
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     public void updateDisplay() {
-        //Update theWord.
+
+        /* Update theWord. */
         showWord.setText(logic.getVisibleWord());
 
-        //Update lives left.
+        /* Update lives left. */
         livesLeft.setText(Integer.toString(logic.getLife()));
 
-        //Update guesses counter.
+        /* Update guesses counter */.
         pointsPoints.setText(Integer.toString(logic.getScore()));
 
-        //Update image according to lives left.
+        /* Update image according to lives left. */
         switch (logic.getLife()) {
             case 7:
                 gallow.setImageResource(R.drawable.galge_2);
@@ -109,20 +120,21 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void guess(String guess) {
-        // Make the logic controller take a guess!
+
+        /* Make the logic controller take a guess */
         logic.guessLetter(guess.toLowerCase());
 
-        // Update the display, to see the next status after the guess.
+        /* Update the display, to see the next status after the guess. */
         updateDisplay();
 
-        // Check whether the game is lost or not.
+        /* Check whether the game is lost or not. */
         if (logic.isTheGameLost()) {
             Intent initLostGameActivity = new Intent(this, LostGameActivity.class);
             startActivity(initLostGameActivity);
             System.out.println("Trying to start LostGameActivity.");
         }
 
-        // Check whether the game is won or not.
+        /* Check whether the game is won or not. */
         if (logic.isTheGameWon()) {
             Intent initWonGameActivity = new Intent(this, WonGameActivity.class);
             startActivity(initWonGameActivity);
@@ -140,7 +152,6 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             ((Button) view).setBackgroundColor(R.drawable.btn_color_shp_pressed);
             view.setEnabled(false);
         }
-
     }
 
 

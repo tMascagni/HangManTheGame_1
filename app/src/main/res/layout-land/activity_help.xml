@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tmasc.hangmanthegame_1.main.HelpActivity">
+    tools:context="com.example.tmasc.hangmanthegame_1.activities.HelpActivity">
 
     <ImageView
         android:id="@+id/hangManTheGame"
