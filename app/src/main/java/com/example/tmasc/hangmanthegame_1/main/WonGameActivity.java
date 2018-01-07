@@ -59,7 +59,7 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
                 .setFadeOutEnabled(true)
                 .setTimeToLive(2000L)
                 .addShapes(Shape.RECT, Shape.CIRCLE)
-                .addSizes(new Size(12, 5f))
+                .addSizes(new Size(15, 5f))
                 .setPosition(100f, viewKonfetti.getWidth() + 10f, 0f, 0f)
                 .stream(300, 5000L)
         ;
