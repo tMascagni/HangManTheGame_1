@@ -51,7 +51,6 @@ public class ChooseGameActivity extends AppCompatActivity implements View.OnClic
                 startActivity(initGame);
                 System.out.println("Trying to start GameActivity.");
                 logic.reset(); // Resets the logic layer.
-                logic.updateWord(); // Updates the word you have to guess.
                 break;
 
             case R.id.Two_player_btn:

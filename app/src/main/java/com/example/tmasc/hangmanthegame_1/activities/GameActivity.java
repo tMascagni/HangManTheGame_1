@@ -53,6 +53,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             btnArray[i].setOnClickListener(this);
         }
 
+        logic.updateWord(); // Updates the word you have to guess.
 
         /* If the word was picked through the ChooseWordActivity,
         use that, else use the standard methods.
@@ -63,19 +64,15 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         Bundle extras = getIntent().getExtras();
 
         if(extras != null){
-        //    logic.
+            logic.setTheWord(extras.getString("new_secret_word"));
         }
 
-        else {
-
-        }
+        /* Disable keyboard. */
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
 
         /* Update the display with the logic layer values. */
         updateDisplay();
-
-        /* Disable keyboard. */
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     }
 
     public void updateDisplay() {
@@ -86,7 +83,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         /* Update lives left. */
         livesLeft.setText(Integer.toString(logic.getLife()));
 
-        /* Update guesses counter */.
+        /* Update guesses counter */
         pointsPoints.setText(Integer.toString(logic.getScore()));
 
         /* Update image according to lives left. */

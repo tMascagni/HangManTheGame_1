@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:ems="10"
+        android:fontFamily="casual"
         android:hint="Your name here..."
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColor="#323232"
-        android:textStyle="italic"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gallow"
         app:layout_constraintTop_toBottomOf="@+id/typeName" />
@@ -30,8 +30,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="casual"
         android:text="Type in your name and press OK"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/gallow"
         app:layout_constraintTop_toBottomOf="@+id/hangManTheGame" />
@@ -89,7 +91,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="A"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -101,7 +105,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="B"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -113,7 +119,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="C"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -125,7 +133,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="D"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -137,7 +147,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="E"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -149,7 +161,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="F"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -161,7 +175,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="G"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </TableRow>
@@ -181,7 +197,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="H"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -193,7 +211,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="I"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -205,7 +225,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="J"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -217,7 +239,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="K"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -229,7 +253,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="L"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -241,7 +267,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="M"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -253,7 +281,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="N"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </TableRow>
@@ -273,7 +303,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="O"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -285,7 +317,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="P"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -297,7 +331,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="Q"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -309,7 +345,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="R"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -321,7 +359,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="S"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -333,7 +373,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="T"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -345,7 +387,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="U"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
         </TableRow>
@@ -365,10 +409,12 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text=""
+                android:textAllCaps="false"
                 android:textSize="14sp"
-                android:visibility="invisible"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/v_btn"
@@ -378,7 +424,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="V"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -390,7 +438,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="W"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -402,7 +452,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="X"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -414,7 +466,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="Y"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -426,7 +480,9 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text="Z"
+                android:textAllCaps="false"
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
@@ -438,10 +494,12 @@
                 android:layout_marginStart="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_color_shp"
+                android:fontFamily="casual"
                 android:text=""
+                android:textAllCaps="false"
                 android:textSize="14sp"
-                android:visibility="invisible"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="invisible" />
 
         </TableRow>
 
@@ -456,7 +514,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_color_shp"
+        android:fontFamily="casual"
         android:text="OK"
+        android:textAllCaps="false"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/word"

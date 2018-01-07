@@ -56,6 +56,10 @@ public class GameLogic {
         public String getTheWord() {
         return theWord;
     }
+        public void setTheWord(String theWord) {
+            this.theWord = theWord;
+            updateVisibleWord();
+        }
 
         /* SINGLETON */
 

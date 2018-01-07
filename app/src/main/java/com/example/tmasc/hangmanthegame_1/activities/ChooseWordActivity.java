@@ -14,14 +14,13 @@ import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.adapter.PickWordAdapter;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
 
-
+import java.util.List;
 
 
 public class ChooseWordActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ImageView hangManTheGame;
     public ListView wordList;
-
 
     private final GameLogic logic = GameLogic.getInstance();
 
@@ -45,13 +44,12 @@ public class ChooseWordActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                String word = (String) adapterView.getItemAtPosition(position);
-
-                Intent initGame = new Intent(ChooseWordActivity.this, GameActivity.class);
-                logic.reset(); // Resets the logic layer.
-                initGame.putExtra("new_secret_word", word); //Saves the word, so we can look it up in GameActivity
-                startActivity(initGame);
-                System.out.println("Trying to start GameActivity.");}
+               String word = (String) adapterView.getItemAtPosition(position);
+               Intent initGame = new Intent(ChooseWordActivity.this, GameActivity.class);
+               logic.reset(); // Resets the logic layer.
+               initGame.putExtra("new_secret_word", word); //Saves the word, so we can look it up in GameActivity
+               startActivity(initGame);
+               System.out.println("Trying to start GameActivity.");}
         });
 
     }
