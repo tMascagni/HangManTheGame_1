@@ -33,9 +33,10 @@ public class ChooseWordActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_word);
 
-        ArrayAdapter<String> a = new ArrayAdapter<String>(this, R.layout.choosewordlistitem, logic.getPossibleWords());
+        ArrayAdapter<String> a = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, logic.getPossibleWords());
 
-        //simple_list_item_1
+        //android.R.layout.simple_list_item_1
+        //R.layout.choosewordlistitem
 
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
         wordList = (ListView) findViewById(R.id.wordList);

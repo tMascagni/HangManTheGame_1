@@ -1,13 +1,13 @@
 package com.example.tmasc.hangmanthegame_1.main;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.media.MediaPlayer;
 
 import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
@@ -31,6 +31,10 @@ public class LostGameActivity extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lost_game);
+
+        // Play sound.
+        MediaPlayer win_sound = MediaPlayer.create(this, R.raw.loose);
+        win_sound.start();
 
         // Initiate
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);

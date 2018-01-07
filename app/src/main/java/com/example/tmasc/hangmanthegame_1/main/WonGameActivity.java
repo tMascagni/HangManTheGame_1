@@ -8,9 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.media.MediaPlayer;
 
 import com.example.tmasc.hangmanthegame_1.R;
 import com.example.tmasc.hangmanthegame_1.gameLogic.GameLogic;
+
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
 
 public class WonGameActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -27,6 +32,10 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_won_game);
 
+        // Play sound.
+        MediaPlayer win_sound = MediaPlayer.create(this, R.raw.win);
+        win_sound.start();
+
         // Initiate.
         hangManTheGame = (ImageView) findViewById(R.id.hangManTheGame);
         gallow = (ImageView) findViewById(R.id.gallow);
@@ -40,6 +49,21 @@ public class WonGameActivity extends AppCompatActivity implements View.OnClickLi
         pointsPoints = (TextView) findViewById(R.id.pointsPoints);
         continueGameBtn = (Button) findViewById(R.id.continueGameBtn);
         storeScoreBtn = (Button) findViewById(R.id.storeScoreBtn);
+        KonfettiView viewKonfetti = (KonfettiView) findViewById(R.id.viewKonfetti);
+
+        // Konfetti
+        viewKonfetti.build()
+                .addColors(Color.RED, Color.YELLOW, Color.MAGENTA)
+                .setDirection(0.0, 359.0)
+                .setSpeed(1f, 5f)
+                .setFadeOutEnabled(true)
+                .setTimeToLive(2000L)
+                .addShapes(Shape.RECT, Shape.CIRCLE)
+                .addSizes(new Size(12, 5f))
+                .setPosition(100f, viewKonfetti.getWidth() + 10f, 0f, 0f)
+                .stream(300, 5000L)
+        ;
+
 
         // I/O listeners.
         continueGameBtn.setOnClickListener(this);
